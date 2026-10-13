@@ -1,0 +1,80 @@
+========== MEDICORE TEST REPORT ==========
+
+===== SEARCH =====
+
+Tìm P002:
+
+{
+ id: "P002",
+ name: "Nguyen Van B",
+ status: "critical",
+ age: 60,
+ heartRate: 130
+}
+
+=====================================
+
+===== FILTER =====
+
+Danh sách bệnh nhân critical:
+
+P002
+P004
+
+=====================================
+
+===== STATISTICS =====
+
+{
+ totalPatient: 4,
+ criticalPatient: 2,
+ criticalPercentage: "50.00%",
+ averageHeartRate: "85.00"
+}
+
+=====================================
+
+THÊM MỚI DỮ LIỆU
+
+P005 - Critical
+P006 - Stable
+
+=====================================
+
+===== UPDATED RESULT =====
+
+{
+ totalPatient: 6,
+ criticalPatient: 3,
+ criticalPercentage: "50.00%",
+ averageHeartRate: "93.00"
+}
+
+=====================================
+
+EDGE CASE TEST
+
+Dữ liệu:
+
+[
+ {heartRate: null},
+ {heartRate: undefined}
+]
+
+Kết quả:
+
+Không xuất hiện NaN
+Không xuất hiện undefined
+Không có lỗi chia cho 0
+
+=====================================
+
+KẾT LUẬN
+
+✓ Search hoạt động đúng
+✓ Filter hoạt động đúng
+✓ Aggregate hoạt động đúng
+✓ Dữ liệu tự cập nhật khi thêm bệnh nhân mới
+✓ Không dùng find()
+✓ Không dùng filter()
+✓ Không dùng reduce()
